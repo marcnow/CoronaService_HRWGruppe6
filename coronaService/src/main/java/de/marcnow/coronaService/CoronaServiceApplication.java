@@ -31,7 +31,7 @@ public class CoronaServiceApplication {
 @RestController
 class HelloController {
 	
-	@GetMapping("/")
+	@GetMapping("=json")
 	String hello() throws Exception {
 		
 		DataService ds = new DataService();

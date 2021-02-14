@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
-import coronoasrvc.CovidKeyIndicators;
-import coronoasrvc.DataService;
 
 @SpringBootApplication
 public class CoronaServiceApplication {

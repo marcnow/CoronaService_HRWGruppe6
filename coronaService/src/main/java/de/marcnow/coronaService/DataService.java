@@ -64,7 +64,11 @@ public class DataService {
 	
 	//returns the days of necessary days of lockdown
 	public float getDaysOfLockdown() {
-		return (getTotalInfections() - getTargetTotalInfections()) / getAverageInfectionRise(7);
+		if(getAverageInfectionRise(7) > 0) {
+			return 0;
+		} else {
+			return ((getTotalInfections() - getTargetTotalInfections()) / getAverageInfectionRise(7)) * -1;
+		}
 	}
 	
 	public float getAverageNewInfectionRise(int days) {
@@ -77,7 +81,6 @@ public class DataService {
 											- ((country.getGermany().get((country.getGermany().size()) - (i + 2)).getConfirmed()) 
 											- (country.getGermany().get((country.getGermany().size()) - (i + 3)).getConfirmed()));
 		}
-		
 		return averageNewInfectionRise / days;
 		
 	}

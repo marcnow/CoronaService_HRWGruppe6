@@ -17,6 +17,7 @@ public class CoronaServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CoronaServiceApplication.class, args);
 		
+		/**
 		try {
 			TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(new Herbert_Bot());
@@ -25,26 +26,6 @@ public class CoronaServiceApplication {
         } catch (TelegramApiException e) {
         	e.printStackTrace();
         }
-	}
-}
-
-@RestController
-class HelloController {
-	
-	@GetMapping("=json")
-	String hello() throws Exception {
-		
-		DataService ds = new DataService();
-		CovidKeyIndicators covidKeyIndicators = new CovidKeyIndicators(ds.getNewInfections(), 
-																	   ds.getTotalInfections(),
-																	   ds.getInfectionRise(),
-																	   ds.getAverageInfectionRise(2),
-																	   ds.getIncidenceValue(),
-																	   ds.getTargetTotalInfections(),
-																	   ds.getDaysOfLockdown());
-		
-		Gson gson = new Gson();
-		String json = gson.toJson(covidKeyIndicators);
-		return json;
+        **/
 	}
 }

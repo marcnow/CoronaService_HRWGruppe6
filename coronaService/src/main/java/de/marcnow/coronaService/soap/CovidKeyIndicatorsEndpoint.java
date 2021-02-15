@@ -1,0 +1,38 @@
+package de.marcnow.coronaService.soap;
+
+import org.springframework.ws.server.endpoint.annotation.Endpoint;
+import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
+import org.springframework.ws.server.endpoint.annotation.RequestPayload;
+import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+
+import coronaservice_grp6.CovidKeyIndicators;
+import coronaservice_grp6.GetCovidKeyIndicatorsRequest;
+import coronaservice_grp6.GetCovidKeyIndicatorsResponse;
+import de.marcnow.coronaService.DataService;
+
+@Endpoint
+public class CovidKeyIndicatorsEndpoint {
+	
+
+	@PayloadRoot(namespace = "coronaservice-grp6", localPart = "getNewInfectionsRequest")
+	@ResponsePayload
+	public GetCovidKeyIndicatorsResponse getNewInfections(@RequestPayload GetCovidKeyIndicatorsRequest request) throws Exception {
+		
+		GetCovidKeyIndicatorsResponse response = new GetCovidKeyIndicatorsResponse();
+		DataService ds = new DataService();
+		
+		CovidKeyIndicators covidKeyIndicators = new CovidKeyIndicators();
+		covidKeyIndicators.setNewInfections(ds.getNewInfections());
+		covidKeyIndicators.setTotalInfections(ds.getTotalInfections());
+		covidKeyIndicators.setInfectionRise(ds.getInfectionRise());
+		covidKeyIndicators.setAverageInfectionRise(ds.getAverageInfectionRise(request.getDays()));
+		covidKeyIndicators.setIncidenceValue(ds.getIncidenceValue());
+		covidKeyIndicators.setTargetTotalInfections(ds.getTargetTotalInfections());
+		covidKeyIndicators.setDaysOfLockdown(ds.getDaysOfLockdown());
+		
+		response.setCovidKeyIndicators(covidKeyIndicators);
+		
+		return response;
+	}
+	
+}

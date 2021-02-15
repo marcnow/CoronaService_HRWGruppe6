@@ -70,18 +70,4 @@ public class DataService {
 			return ((getTotalInfections() - getTargetTotalInfections()) / getAverageInfectionRise(7)) * -1;
 		}
 	}
-	
-	public float getAverageNewInfectionRise(int days) {
-		
-		float averageNewInfectionRise = 0;
-		
-		for (int i = 0; i < days; i++) {
-			averageNewInfectionRise += ((country.getGermany().get((country.getGermany().size()) - (i + 1)).getConfirmed()) 
-										- (country.getGermany().get((country.getGermany().size()) - (i + 2)).getConfirmed()))
-											- ((country.getGermany().get((country.getGermany().size()) - (i + 2)).getConfirmed()) 
-											- (country.getGermany().get((country.getGermany().size()) - (i + 3)).getConfirmed()));
-		}
-		return averageNewInfectionRise / days;
-		
-	}
 }

@@ -11,7 +11,6 @@ import de.marcnow.coronaService.DataService;
 class AverageInfectionRise {
 	float averageInfectionRise;
 	public AverageInfectionRise(float averageInfectionRise) {this.averageInfectionRise = averageInfectionRise;}
-	
 }
 
 @RestController

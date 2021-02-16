@@ -11,6 +11,9 @@ import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
 
+import coronaservice_grp6.GetCovidKeyIndicatorsRequest;
+import coronaservice_grp6.GetCovidKeyIndicatorsResponse;
+
 @EnableWs
 @Configuration
 public class WebServiceConfig {
@@ -22,7 +25,7 @@ public class WebServiceConfig {
 		messageDispatcherServlet.setTransformWsdlLocations(true);
 		return new ServletRegistrationBean(messageDispatcherServlet, "/soap/*");
 	}
-	
+		
 	@Bean(name = "covidkeyindicators")
 	public DefaultWsdl11Definition defaultWsdl11Definition (XsdSchema covidKeyIndicatorsSchema) {
 		

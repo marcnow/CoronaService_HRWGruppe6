@@ -12,7 +12,7 @@ public class CoronaServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CoronaServiceApplication.class, args);
-		/**
+		
 		try {
 			TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(new Herbert_Bot());
@@ -21,6 +21,6 @@ public class CoronaServiceApplication {
         } catch (TelegramApiException e) {
         	e.printStackTrace();
         }
-        **/
+        
 	}
 }

@@ -32,7 +32,7 @@ import com.google.gson.Gson;
 				message.setText("Hallo ich bin Herbert, der von den Studenten der HRW programmierte Bot, �ber den man die aktuellen Corona Kennzahlen in Deutschland beziehen kann. Wie kann ich Ihnen weiterhelfen?");
 			}
 			else if(command.equals("/neuinfektionen")) {
-				message.setText("Von gestern auf heute haben sich " + covidKeyIndicators.getNewInfections()  + " Leute neu mit Corona infiziert");
+				message.setText("Von gestern auf heute haben sich " + covidKeyIndicators.getNewInfections()  + " Leute neu mit Corona infiziert!");
 			}
 			
 			else if(command.equals("/gesamtinfektionen")) {
@@ -44,21 +44,19 @@ import com.google.gson.Gson;
 			}
 			
 			else if(command.equals("/durchschnittlicheranstieg")) {
-				message.setText("Von wie vielen Tagen soll der durschnittliche Anstieg berechnet werden?");
+				SendMessage send = new SendMessage();
+				send.setText("Von wie vielen Tagen soll der durschnittliche Anstieg berechnet werden?");
 				String days = update.getMessage().getText();
-				if(Integer.parseInt(days) == 1) {
-					message.setText("Der durcschnittliche Anstieg der letzten " + days + " Tage beträgt: " + covidKeyIndicators.getAverageInfectionRise());
-				} else {
-					String tmp = null;
-					try {
-						tmp = readUrl("https://coronaservice-grp6.herokuapp.com/rest/averageInfectionRise?days=" + days);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-					AverageInfectionRise averageInfectionRise = new AverageInfectionRise();
-					averageInfectionRise = gson.fromJson(tmp, AverageInfectionRise.class);
-					message.setText("Der durcschnittliche Anstieg der letzten " + days + " Tage beträgt: " + averageInfectionRise.getAverageInfectionRise());
+				
+				String tmp = null;
+				try {
+					tmp = readUrl("https://coronaservice-grp6.herokuapp.com/rest/averageInfectionRise?days=" + days);
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
+				AverageInfectionRise averageInfectionRise = new AverageInfectionRise();
+				averageInfectionRise = gson.fromJson(tmp, AverageInfectionRise.class);
+				message.setText("Der durcschnittliche Anstieg der letzten " + days + " Tage beträgt: " + averageInfectionRise.getAverageInfectionRise());
 			}
 			
 			else if(command.equals("/rwert")) {
@@ -71,10 +69,7 @@ import com.google.gson.Gson;
 			
 			else if(command.equals("/voraussage")) {
 				message.setText("Vorraussichtlich dauert der Lockdown noch " + covidKeyIndicators.getDaysOfLockdown() + " Tage");
-			}
-			
-			// den hier braucht man wahrscheinlich nicht der zeigt nur an, wenn Text in Telegramm geschrieben wird - error entsteht weil probiert wird ne nachricht zu senden
-			else {
+			} else {
 				System.out.println(update.getMessage().getText());
 			}
 			

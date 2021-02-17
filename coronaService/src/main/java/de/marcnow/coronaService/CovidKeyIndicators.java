@@ -1,5 +1,10 @@
 package de.marcnow.coronaService;
 
+/**
+* This is a class to map all the covid key indicators to json
+* @author Marc Nowakowski
+* @version 1.0
+*/
 public class CovidKeyIndicators {
 	private int newInfections;
 	private int totalInfections;

@@ -1,11 +1,10 @@
 package de.marcnow.coronaService;
 
 /**
-* 
+* This is a class to map the RKI data to json
 * @author Marc Nowakowski
 * @version 1.0
 */
-
 public class Attribute {
 	private float cases7_bl_per_100k;
 	

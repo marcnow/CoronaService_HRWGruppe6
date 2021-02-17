@@ -5,12 +5,13 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import com.google.gson.Gson;
 
+
+
 /**
 * reads data from the Robert Koch Institut represented by the URL and parses them from json to Incidence class
 * @author Niklas Frochte
 * @version 1.0
 */
-
 public class RobertKoch extends Incidence {
 	
 	private Incidence incidence;
@@ -31,7 +32,7 @@ public class RobertKoch extends Incidence {
 	
 	/**
 	 * @param the parameter urlString contains the http adress for the covid data from the Robert Koch Institut
-	 * @return returns the data converted into String
+	 * @return returns the data converted into json String
 	 * @throws Exception when an error in the BufferedReader occurs
 	 */
 	private static String readUrl(String urlString) throws Exception {

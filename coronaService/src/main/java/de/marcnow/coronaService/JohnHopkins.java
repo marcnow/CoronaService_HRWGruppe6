@@ -30,7 +30,7 @@ public class JohnHopkins extends Country {
 	
 	/**
 	 * @param the parameter urlString contains the http adress for the covid data from the John Hopkins University
-	 * @return returns the data converted into String
+	 * @return returns the data converted into json String
 	 * @throws Exception when an error in the BufferedReader occurs
 	 */
 	private static String readUrl(String urlString) throws Exception {

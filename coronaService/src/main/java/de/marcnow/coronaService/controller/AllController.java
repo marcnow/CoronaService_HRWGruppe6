@@ -20,12 +20,12 @@ public class AllController {
 	
 	/**
 	 * This method invokes when /rest/all is called
-	 * @param days
+	 * @param days, the default value is 3
 	 * @return covidKeyIndicators in a json format
 	 * @throws Exception
 	 */
 	@GetMapping("/rest/all")
-	public String covidKeyIndicators(@RequestParam(value = "days", defaultValue = "1") int days) throws Exception {
+	public String covidKeyIndicators(@RequestParam(value = "days", defaultValue = "3") int days) throws Exception {
 		Gson gson = new Gson();
 		DataService ds = new DataService();
 		return gson.toJson(new CovidKeyIndicators(ds.getNewInfections(), ds.getTotalInfections(), ds.getInfectionRise(), ds.getAverageInfectionRise(days),

@@ -29,12 +29,12 @@ public class AverageInfectionRiseController {
 	
 	/**
 	 * This method invokes when /rest/averageinfectionrise is called
-	 * @param days
+	 * @param days, the default value is 3
 	 * @return the average infection of the last n days
 	 * @throws Exception
 	 */
 	@GetMapping("rest/averageinfectionrise")
-	public String averageInfectionRise(@RequestParam(value = "days", defaultValue = "1") int days) throws Exception {
+	public String averageInfectionRise(@RequestParam(value = "days", defaultValue = "3") int days) throws Exception {
 		Gson gson = new Gson();
 		return gson.toJson(new AverageInfectionRise(new DataService().getAverageInfectionRise(days)));
 	}

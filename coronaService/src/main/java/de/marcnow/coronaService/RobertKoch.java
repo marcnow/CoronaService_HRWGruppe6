@@ -5,8 +5,6 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import com.google.gson.Gson;
 
-
-
 /**
 * reads data from the Robert Koch Institut represented by the URL and parses them from json to Incidence class
 * @author Niklas Frochte

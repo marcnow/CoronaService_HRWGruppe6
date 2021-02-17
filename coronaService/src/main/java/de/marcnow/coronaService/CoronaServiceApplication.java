@@ -6,6 +6,10 @@ import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
+import coronaservice_grp6.GetCovidKeyIndicatorsRequest;
+import coronaservice_grp6.GetCovidKeyIndicatorsResponse;
+import de.marcnow.coronaService.soap.CovidKeyIndicatorsEndpoint;
+
 /**
 * CoronaServiceApplication starts the telegram bot and the spring application.
 * @author Till von Seggern
@@ -14,7 +18,7 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 @SpringBootApplication
 public class CoronaServiceApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		SpringApplication.run(CoronaServiceApplication.class, args);
 		
 		try {
@@ -25,5 +29,6 @@ public class CoronaServiceApplication {
         } catch (TelegramApiException e) {
         	e.printStackTrace();
         }
+        
 	}
 }

@@ -30,6 +30,5 @@ public class AllController {
 		DataService ds = new DataService();
 		return gson.toJson(new CovidKeyIndicators(ds.getNewInfections(), ds.getTotalInfections(), ds.getInfectionRise(), ds.getAverageInfectionRise(days),
 				ds.getIncidenceValue(), ds.getTargetTotalInfections(), ds.getDaysOfLockdown()));
-		
 	}
 }

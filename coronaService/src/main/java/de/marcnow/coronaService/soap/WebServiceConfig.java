@@ -34,10 +34,10 @@ public class WebServiceConfig {
 		MessageDispatcherServlet messageDispatcherServlet = new MessageDispatcherServlet();
 		messageDispatcherServlet.setApplicationContext(context);
 		messageDispatcherServlet.setTransformWsdlLocations(true);
-		return new ServletRegistrationBean(messageDispatcherServlet, "/soap/*");
+		return new ServletRegistrationBean(messageDispatcherServlet, "/soapservice/*");
 	}
 	/**
-	 * This method invokes when /soap/covidkeyindicators.wsdl is called
+	 * This method invokes when /soapservice/covidkeyindicators.wsdl is called
 	 * @param covidKeyIndicatorsSchema
 	 * @return a default wsdl definition
 	 */
@@ -47,7 +47,7 @@ public class WebServiceConfig {
 		DefaultWsdl11Definition definition = new DefaultWsdl11Definition();
 		definition.setPortTypeName("CovidKeyIndicatorsPort");
 		definition.setTargetNamespace("coronaservice-grp6");
-		definition.setLocationUri("/soap");
+		definition.setLocationUri("/soapservice");
 		definition.setSchema(covidKeyIndicatorsSchema);
 		return definition;
 	}

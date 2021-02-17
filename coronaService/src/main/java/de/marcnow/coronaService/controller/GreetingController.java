@@ -19,9 +19,10 @@ public class GreetingController {
 	 */
 	@GetMapping("/")
 	public String greeting() throws Exception {
-		return "Folgende Befehle stehen zur Verfügung: "
-				+ "rest/newinfections, rest/infectionrise, rest/averageinfectionrise, rest/incidencevalue, rest/targettotalinfections,"
-				+ "rest/daysoflockdown \n";
+		return "<h1>Corona Service API</h1>\n"
+				+ "<i>Das System bereitet die Daten der John Hopkins Universität und des Robert Koch Instituts auf "
+				+ "und berechnet Kennzahlen in Bezug zu Corona Situation in Deutschland. Die Daten werden sowohl über eine SOAP,"
+				+ " als auch eine REST Schnittstelle, im JSON Format dem Telegram Bot HRWGruppe6_Herbert zur Verfügung gestellt.</i>\n"
+				+ "Für die verfügbaren Befehle bitte /swagger-ui.html aufrufen.";
 	}
-
 }

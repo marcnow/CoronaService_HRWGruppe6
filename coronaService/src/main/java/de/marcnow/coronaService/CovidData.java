@@ -16,6 +16,13 @@ public class CovidData {
     public CovidData() {
     }
     
+	public CovidData(String date, int confirmed, int deaths, int recovered) {
+		this.date = date;
+		this.confirmed = confirmed;
+		this.deaths = deaths;
+		this.recovered = recovered;
+	}
+
 	public String getDate() {
 		return date;
 	}

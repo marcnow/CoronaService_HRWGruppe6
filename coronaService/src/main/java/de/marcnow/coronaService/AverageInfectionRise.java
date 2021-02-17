@@ -2,7 +2,7 @@ package de.marcnow.coronaService;
 
 
 /**
-* This is a class to map the RKI data to json
+* This is a class to map the json data to the class
 * @author Marc Nowakowski
 * @version 1.0
 */

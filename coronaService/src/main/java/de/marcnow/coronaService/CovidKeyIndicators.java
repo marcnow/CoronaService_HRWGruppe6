@@ -1,7 +1,7 @@
 package de.marcnow.coronaService;
 
 /**
-* This is a class to map all the covid key indicators to json
+* This is a class to map json data to this class
 * @author Marc Nowakowski
 * @version 1.0
 */

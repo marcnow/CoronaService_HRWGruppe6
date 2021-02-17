@@ -38,4 +38,5 @@ public class AverageInfectionRiseController {
 		Gson gson = new Gson();
 		return gson.toJson(new AverageInfectionRise(new DataService().getAverageInfectionRise(days)));
 	}
+	
 }

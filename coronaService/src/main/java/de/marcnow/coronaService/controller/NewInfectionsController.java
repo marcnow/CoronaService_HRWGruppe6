@@ -7,6 +7,8 @@ import com.google.gson.Gson;
 
 import de.marcnow.coronaService.DataService;
 
+
+
 /**
  * This is a class to map the data to json
  * @author Till von Seggern
@@ -35,5 +37,4 @@ public class NewInfectionsController {
 		Gson gson = new Gson();
 		return gson.toJson(new NewInfections(new DataService().getNewInfections()));
 	}
-	
 }

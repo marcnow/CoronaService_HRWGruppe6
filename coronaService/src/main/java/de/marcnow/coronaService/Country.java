@@ -16,6 +16,11 @@ public class Country extends CovidData {
     public Country() {
     }
     
+	public Country(String countryName, List<CovidData> germany) {
+		this.countryName = countryName;
+		Germany = germany;
+	}
+
 	public String getCountryName() {
 		return countryName;
 	}

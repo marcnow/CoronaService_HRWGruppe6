@@ -25,10 +25,10 @@ public class CovidKeyIndicatorsEndpoint {
 	/**
 	 * 
 	 * @param request
-	 * @return the hardcoded class covidKeyIndicators
+	 * @return the class covidKeyIndicators with live indicators
 	 * @throws Exception
 	 */
-	public GetCovidKeyIndicatorsResponse getNewInfections(@RequestPayload GetCovidKeyIndicatorsRequest request) throws Exception {
+	public GetCovidKeyIndicatorsResponse getCovidKeyIndicators(@RequestPayload GetCovidKeyIndicatorsRequest request) throws Exception {
 		
 		GetCovidKeyIndicatorsResponse response = new GetCovidKeyIndicatorsResponse();
 		DataService ds = new DataService();

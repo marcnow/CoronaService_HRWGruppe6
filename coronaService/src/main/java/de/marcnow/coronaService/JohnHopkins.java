@@ -5,11 +5,21 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import com.google.gson.Gson;
 
+/**
+* reads data from the John Hopkins University represented by the URL and parses them from json to country class
+* @author Niklas Frochte
+* @author Till von Seggern
+* @version 1.0
+*/
 
 public class JohnHopkins extends Country {
 	
 	private Country country;
 	
+	/**
+	 * uses the readURL method to get the covid data in json format and converts to country class
+	 * @throws Exception
+	 */
 	public JohnHopkins() throws Exception {
 		
 		String json = readUrl("https://pomber.github.io/" + "covid19/timeseries.json");
@@ -18,6 +28,11 @@ public class JohnHopkins extends Country {
 		country = gson.fromJson(json, Country.class);
 	}
 	
+	/**
+	 * @param the parameter urlString contains the http adress for the covid data from the John Hopkins University
+	 * @return returns the data converted into String
+	 * @throws Exception when an error in the BufferedReader occurs
+	 */
 	private static String readUrl(String urlString) throws Exception {
 		BufferedReader reader = null;
 	    try {

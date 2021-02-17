@@ -1,5 +1,11 @@
 package de.marcnow.coronaService;
 
+/**
+* The CovidData class provides a construct for the Country class but is never used itself.
+* @author Björn Bulenda
+* @version 1.0
+*/
+
 public class CovidData {
 	
 	private String date;

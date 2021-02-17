@@ -5,11 +5,20 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import com.google.gson.Gson;
 
+/**
+* reads data from the Robert Koch Institut represented by the URL and parses them from json to Incidence class
+* @author Niklas Frochte
+* @version 1.0
+*/
 
 public class RobertKoch extends Incidence {
 	
 	private Incidence incidence;
 	
+	/**
+	 * uses the readURL method to get the covid data in json format and converts to Incidence class
+	 * @throws Exception
+	 */
 	public RobertKoch() throws Exception {
 		String json = readUrl("https://services7.arcgis.com/"
 				+ "mOBPykOjAyBO2ZKk/arcgis/rest/services/Coronaf%C3%A4lle_in_den_Bundesl%C3%A4ndern"
@@ -19,7 +28,12 @@ public class RobertKoch extends Incidence {
 		Gson gson = new Gson();
 		incidence = gson.fromJson(json, Incidence.class);
 	}
-
+	
+	/**
+	 * @param the parameter urlString contains the http adress for the covid data from the Robert Koch Institut
+	 * @return returns the data converted into String
+	 * @throws Exception when an error in the BufferedReader occurs
+	 */
 	private static String readUrl(String urlString) throws Exception {
 		BufferedReader reader = null;
 	    try {

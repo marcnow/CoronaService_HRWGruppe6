@@ -7,14 +7,29 @@ import com.google.gson.Gson;
 
 import de.marcnow.coronaService.DataService;
 
+/**
+ * This is a class to map the data to json
+ * @author Björn Bulenda
+ *
+ */
 class IncidenceValue {
 	float incidenceValue;
 	public IncidenceValue(float incidenceValue) {this.incidenceValue = incidenceValue;}
 }
 
+/**
+* handles the http requests for the rest webservice regarding the incidence value and returns the data in json format
+* @author Björn Bulenda
+* @version 1.0
+*/
 @RestController
 public class IncidenceValueController {
-
+	
+	/**
+	 * This method invokes when /rest/incidencevalue is called
+	 * @return the incidence value of germany 
+	 * @throws Exception
+	 */
 	@GetMapping("rest/incidencevalue")
 	public String incidenceValue() throws Exception {
 		Gson gson = new Gson();

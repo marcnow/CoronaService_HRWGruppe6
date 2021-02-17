@@ -7,14 +7,29 @@ import com.google.gson.Gson;
 
 import de.marcnow.coronaService.DataService;
 
+/**
+ * This is a class to map the data to json
+ * @author Till von Seggern
+ *
+ */
 class NewInfections {
 	int newInfections;
 	public NewInfections(int newInfections) {this.newInfections = newInfections;}
 }
 
+/**
+* handles the http requests for the rest webservice regarding the new infections in comparison with yesterday and returns the data in json format
+* @author Till von Seggern
+* @version 1.0
+*/
 @RestController
 public class NewInfectionsController {
 	
+	/**
+	 * This method invokes when /rest/newinfections is called
+	 * @return the new infections of the last 24 hours
+	 * @throws Exception
+	 */
 	@GetMapping("rest/newinfections")
 	public String newInfections() throws Exception {
 		Gson gson = new Gson();

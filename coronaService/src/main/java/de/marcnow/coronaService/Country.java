@@ -2,6 +2,12 @@ package de.marcnow.coronaService;
 
 import java.util.List;
 
+/**
+* The country class gets the data for germany from the johnHopkins class and provides these for the dataService class.
+* @author Björn Bulenda
+* @version 1.0
+*/
+
 public class Country extends CovidData {
 	
 	private String countryName = "Germany";

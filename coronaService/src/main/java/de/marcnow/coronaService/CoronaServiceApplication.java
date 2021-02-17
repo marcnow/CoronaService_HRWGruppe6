@@ -6,7 +6,11 @@ import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
-
+/**
+* CoronaServiceApplication starts the telegram bot and the spring application.
+* @author Till von Seggern
+* @version 1.0
+*/
 @SpringBootApplication
 public class CoronaServiceApplication {
 
@@ -21,6 +25,5 @@ public class CoronaServiceApplication {
         } catch (TelegramApiException e) {
         	e.printStackTrace();
         }
-        
 	}
 }

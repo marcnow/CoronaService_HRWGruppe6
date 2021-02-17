@@ -10,12 +10,24 @@ import coronaservice_grp6.GetCovidKeyIndicatorsRequest;
 import coronaservice_grp6.GetCovidKeyIndicatorsResponse;
 import de.marcnow.coronaService.DataService;
 
+/**
+* This class retrieves the data via soap
+* @author Niklas Frochte
+* @author Marc Nowakowski
+* @version 1.0
+*/
 @Endpoint
 public class CovidKeyIndicatorsEndpoint {
 	
 
 	@PayloadRoot(namespace = "coronaservice-grp6", localPart = "getNewInfectionsRequest")
 	@ResponsePayload
+	/**
+	 * 
+	 * @param request
+	 * @return the hardcoded class covidKeyIndicators
+	 * @throws Exception
+	 */
 	public GetCovidKeyIndicatorsResponse getNewInfections(@RequestPayload GetCovidKeyIndicatorsRequest request) throws Exception {
 		
 		GetCovidKeyIndicatorsResponse response = new GetCovidKeyIndicatorsResponse();

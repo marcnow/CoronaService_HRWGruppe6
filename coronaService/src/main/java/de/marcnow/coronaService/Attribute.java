@@ -1,5 +1,11 @@
 package de.marcnow.coronaService;
 
+/**
+* 
+* @author Marc Nowakowski
+* @version 1.0
+*/
+
 public class Attribute {
 	private float cases7_bl_per_100k;
 	

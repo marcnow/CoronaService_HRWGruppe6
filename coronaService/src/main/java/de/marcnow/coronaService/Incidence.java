@@ -2,6 +2,12 @@ package de.marcnow.coronaService;
 
 import java.util.List;
 
+/**
+* gets data from RobertKoch class 
+* @author Till von Seggern
+* @version 1.0
+*/
+
 public class Incidence extends Feature {
 	
 	public Incidence() {

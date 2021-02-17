@@ -14,10 +14,21 @@ import org.springframework.xml.xsd.XsdSchema;
 import coronaservice_grp6.GetCovidKeyIndicatorsRequest;
 import coronaservice_grp6.GetCovidKeyIndicatorsResponse;
 
+/**
+* This class creates the web service to access our .wsdl file
+* @author Niklas Frochte
+* @version 1.0
+*/
+
 @EnableWs
 @Configuration
 public class WebServiceConfig {
-
+	
+	/**
+	 * This method identifies the path to access the .wsdl file
+	 * @param context
+	 * @return the servlet registration bean 
+	 */
 	@Bean
 	public ServletRegistrationBean messageDispatcherServlet(ApplicationContext context) {
 		MessageDispatcherServlet messageDispatcherServlet = new MessageDispatcherServlet();
@@ -25,7 +36,11 @@ public class WebServiceConfig {
 		messageDispatcherServlet.setTransformWsdlLocations(true);
 		return new ServletRegistrationBean(messageDispatcherServlet, "/soap/*");
 	}
-		
+	/**
+	 * This method invokes when /soap/covidkeyindicators.wsdl is called
+	 * @param covidKeyIndicatorsSchema
+	 * @return a default wsdl definition
+	 */
 	@Bean(name = "covidkeyindicators")
 	public DefaultWsdl11Definition defaultWsdl11Definition (XsdSchema covidKeyIndicatorsSchema) {
 		
@@ -37,6 +52,9 @@ public class WebServiceConfig {
 		return definition;
 	}
 	
+	/**
+	 * @return a xsd schema
+	 */
 	@Bean
 	public XsdSchema covidKeyIndicatorsSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("covidkeyindicators.xsd"));

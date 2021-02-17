@@ -1,5 +1,11 @@
 package de.marcnow.coronaService;
 
+/**
+* provides construct for the Incidence class
+* @author Björn Bulenda
+* @version 1.0
+*/
+
 public class Feature extends Attribute {
 	private Attribute attributes;
 

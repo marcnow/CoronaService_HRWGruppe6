@@ -9,9 +9,21 @@ import com.google.gson.Gson;
 import de.marcnow.coronaService.CovidKeyIndicators;
 import de.marcnow.coronaService.DataService;
 
+/**
+* handles the http requests for the rest webservice regarding the all covid key indicators and returns the data in json format
+* @author Niklas Frochte
+* @version 1.0
+*/
+
 @RestController
 public class AllController {
-
+	
+	/**
+	 * This method invokes when /rest/all is called
+	 * @param days
+	 * @return covidKeyIndicators in a json format
+	 * @throws Exception
+	 */
 	@GetMapping("/rest/all")
 	public String covidKeyIndicators(@RequestParam(value = "days", defaultValue = "1") int days) throws Exception {
 		Gson gson = new Gson();
